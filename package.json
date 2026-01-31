@@ -1,0 +1,25 @@
+{
+  "name": "nft-launchpad",
+  "version": "1.0.0",
+  "description": "Production-ready NFT Collection Launchpad",
+  "main": "index.js",
+  "scripts": {
+    "test": "hardhat test",
+    "compile": "hardhat compile",
+    "deploy": "hardhat run scripts/deploy.js",
+    "generate-merkle": "node scripts/generate-merkle.js",
+    "hardhat": "hardhat"
+  },
+  "devDependencies": {
+    "hardhat": "^2.17.0",
+    "@nomicfoundation/hardhat-toolbox": "^3.0.0",
+    "@nomicfoundation/hardhat-ethers": "^3.0.0",
+    "@openzeppelin/contracts": "^4.9.3",
+    "ethers": "^6.7.1",
+    "chai": "^4.3.7"
+  },
+  "dependencies": {
+    "merkletreejs": "^0.3.10",
+    "keccak256": "^1.4.2"
+  }
+}
