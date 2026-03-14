@@ -1,0 +1,119 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: #171717; /* Ensure background color */
+  color: #FFFFFF; /* Ensure default text color */
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Custom animations */
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 0.35;
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 6s infinite ease-in-out;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.8s ease-out forwards;
+}
+
+/* RainbowKit overrides for better dark mode integration */
+.rk__connectButton {
+  background-color: theme('colors.primary') !important;
+  color: white !important;
+  border-radius: theme('borderRadius.xl') !important;
+  font-weight: bold !important;
+  padding: 0.75rem 1.5rem !important;
+  transition: all 0.3s ease !important;
+}
+
+.rk__connectButton:hover {
+  background-color: theme('colors.primary') !important;
+  opacity: 0.9;
+  box-shadow: theme('boxShadow.glow') !important;
+}
+
+.rk__modal {
+  background-color: theme('colors.surface') !important;
+  border-radius: theme('borderRadius.xl') !important;
+  border: 1px solid theme('colors.border') !important;
+}
+
+.rk__header {
+  background-color: theme('colors.background') !important;
+  border-bottom: 1px solid theme('colors.border') !important;
+}
+
+.rk__body {
+  background-color: theme('colors.surface') !important;
+}
+
+.rk__text {
+  color: theme('colors.text') !important;
+}
+
+.rk__subtext {
+  color: theme('colors.textSecondary') !important;
+}
+
+.rk__button {
+  background-color: theme('colors.background') !important;
+  color: theme('colors.text') !important;
+  border: 1px solid theme('colors.border') !important;
+  border-radius: theme('borderRadius.lg') !important;
+}
+
+.rk__button:hover {
+  background-color: theme('colors.surface') !important;
+  border-color: theme('colors.primary') !important;
+}
+
+.rk__walletButton {
+  background-color: theme('colors.background') !important;
+  border: 1px solid theme('colors.border') !important;
+  border-radius: theme('borderRadius.lg') !important;
+}
+
+.rk__walletButton:hover {
+  background-color: theme('colors.surface') !important;
+  border-color: theme('colors.primary') !important;
+}
+
+.rk__walletButton:focus {
+  outline: 2px solid theme('colors.primary') !important;
+  outline-offset: 2px;
+}
