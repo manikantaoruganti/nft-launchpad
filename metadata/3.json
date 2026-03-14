@@ -1,0 +1,19 @@
+{
+  "name": "My NFT #3",
+  "description": "A unique generative NFT from our collection.",
+  "image": "ipfs://QmVzXgYhJkLpMnNqRsStUvWxYzAaBcDeFgHiJkL/3.png",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "Starlight"
+    },
+    {
+      "trait_type": "Shape",
+      "value": "Polygon"
+    },
+    {
+      "trait_type": "Color",
+      "value": "Magenta"
+    }
+  ]
+}

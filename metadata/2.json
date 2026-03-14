@@ -1,0 +1,19 @@
+{
+  "name": "My NFT #2",
+  "description": "A unique generative NFT from our collection.",
+  "image": "ipfs://QmVzXgYhJkLpMnNqRsStUvWxYzAaBcDeFgHiJkL/2.png",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "Nebula"
+    },
+    {
+      "trait_type": "Shape",
+      "value": "Crystal"
+    },
+    {
+      "trait_type": "Color",
+      "value": "Cyan"
+    }
+  ]
+}

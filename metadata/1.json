@@ -1,0 +1,19 @@
+{
+  "name": "My NFT #1",
+  "description": "A unique generative NFT from our collection.",
+  "image": "ipfs://QmVzXgYhJkLpMnNqRsStUvWxYzAaBcDeFgHiJkL/1.png",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "Cosmic"
+    },
+    {
+      "trait_type": "Shape",
+      "value": "Orb"
+    },
+    {
+      "trait_type": "Color",
+      "value": "Violet"
+    }
+  ]
+}
