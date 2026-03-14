@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 🚀 My NFT Launchpad: A Full-Stack Web3 Project
 
 Welcome to the My NFT Launchpad, a comprehensive, production-grade platform for launching and minting ERC721 NFTs. This project provides a complete ecosystem, from smart contract development and off-chain tooling to a modern Next.js frontend and Dockerized deployment.
@@ -310,3 +311,7 @@ Feel free to fork this repository and contribute!
 ## 📄 License
 
 This project is licensed under the MIT License.
+=======
+# nft-launchpad
+Production-ready Generative NFT Collection Launchpad with ERC-721 contract, Merkle allowlist, reveal mechanism, and full-stack DApp with Docker containerization
+>>>>>>> e32a701866154d91a67798f0bd3598aabfa9d574

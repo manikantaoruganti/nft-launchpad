@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 require("@nomicfoundation/hardhat-toolbox");
 require("dotenv").config();
 
@@ -16,11 +17,18 @@ module.exports = {
     },
   },
   defaultNetwork: "hardhat",
+=======
+require('@nomicfoundation/hardhat-toolbox');
+
+module.exports = {
+  solidity: '0.8.20',
+>>>>>>> e32a701866154d91a67798f0bd3598aabfa9d574
   networks: {
     hardhat: {
       chainId: 31337,
     },
     localhost: {
+<<<<<<< HEAD
       chainId: 31337,
     },
     sepolia: {
@@ -48,5 +56,19 @@ module.exports = {
   },
   mocha: {
     timeout: 40000, // 40 seconds
+=======
+      url: 'http://127.0.0.1:8545',
+      chainId: 31337,
+    },
+    sepolia: {
+      url: process.env.SEPOLIA_RPC_URL || '',
+      accounts: process.env.PRIVATE_KEY ? [process.env.PRIVATE_KEY] : [],
+    },
+  },
+  paths: {
+    sources: './contracts',
+    tests: './test',
+    artifacts: './artifacts',
+>>>>>>> e32a701866154d91a67798f0bd3598aabfa9d574
   },
 };
