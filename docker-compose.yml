@@ -1,0 +1,53 @@
+version: '3.8'
+
+services:
+  hardhat-node:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: contracts_stage
+    container_name: hardhat-node
+    ports:
+      - "8545:8545"
+    command: npx hardhat node --hostname 0.0.0.0
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8545"]
+      interval: 5s
+      timeout: 10s
+      retries: 5
+    volumes:
+      - ./contracts:/usr/src/app/contracts
+      - ./scripts:/usr/src/app/scripts
+      - ./test:/usr/src/app/test
+      - ./hardhat.config.js:/usr/src/app/hardhat.config.js
+      - ./package.json:/usr/src/app/package.json
+      - ./package-lock.json:/usr/src/app/package-lock.json
+      - ./node_modules:/usr/src/app/node_modules
+      - ./artifacts:/usr/src/app/artifacts # Persist artifacts
+      - ./frontend/contracts:/usr/src/app/frontend/contracts # Persist ABI for frontend
+    environment:
+      - SEPOLIA_RPC_URL=${SEPOLIA_RPC_URL}
+      - PRIVATE_KEY=${PRIVATE_KEY}
+      - PINATA_API_KEY=${PINATA_API_KEY}
+      - PINATA_SECRET_API_KEY=${PINATA_SECRET_API_KEY}
+      - NEXT_PUBLIC_CONTRACT_ADDRESS=${NEXT_PUBLIC_CONTRACT_ADDRESS}
+
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: frontend_stage
+    container_name: nft-frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      hardhat-node:
+        condition: service_healthy
+    environment:
+      - NEXT_PUBLIC_CONTRACT_ADDRESS=${NEXT_PUBLIC_CONTRACT_ADDRESS}
+      - NODE_ENV=development
+    volumes:
+      - ./frontend:/usr/src/app/frontend
+      - ./frontend/node_modules:/usr/src/app/frontend/node_modules
+      - ./frontend/contracts:/usr/src/app/frontend/contracts # Mount ABI from hardhat-node
+    command: npm run dev
